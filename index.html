@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <form v-on:submit="todoCreate">
+      <input v-bind:placeHolder="inputMessage" v-bind:id="inputId" />
+      <button v-bind:type="buttonType">{{ buttonMessage}}</button>
+    </form>
+    <ul>
+      <li v-for="todo in todoList" v-bind:id="todo.id">{{ todo.id }}. {{ todo.text }}<button v-on:click="todoDelete">다했당!</button></li>
+    </ul>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="js/vendor/vue.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
